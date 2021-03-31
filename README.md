@@ -12,7 +12,7 @@
 - ReaderClass (aici se afla functiile de citire)
 - Service (functiile utilitare)
 
-# Methhods
+# Methods
 
 - Create user
 - Remove user
