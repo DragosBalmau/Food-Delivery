@@ -44,7 +44,6 @@ public class Data {
         this.users.remove(user);
     }
 
-
     public List<Restaurant> getRestaurants() {
         return restaurants;
     }

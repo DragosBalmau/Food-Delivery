@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class User implements WritableCSV{
 
     protected String firstName;
     protected String lastName;
@@ -10,16 +10,30 @@ public class User {
     protected Location location;
     protected String cardID;
     protected String telephoneNumber;
+    protected String email; //TODO add this atribute into constructor and in reader methods
 
     private double balance;
     private List<Product> basket = new ArrayList();
-    private List<Command> commandsHistory= new ArrayList();
+    private List<Command> commandsHistory = new ArrayList();
+
+    public User() {}
 
     public User(String firstName, String lastName, String ID, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.ID = ID;
         this.password = password;
+    }
+
+    //TODO conversie String to Location
+    public User(String firstName, String lastName, String ID, String password, String location, String cardID, String telephoneNumber, double balance) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.ID = ID;
+        this.password = password;
+        this.cardID = cardID;
+        this.telephoneNumber = telephoneNumber;
+
     }
 
     public void addToBasket(Product product) {
@@ -119,5 +133,16 @@ public class User {
                 ", balance=" + balance +
                 ", commandsHistory=" + commandsHistory +
                 '}';
+    }
+
+    public String dataCSV() {
+        return firstName + ',' +
+                lastName + ',' +
+                ID + ',' +
+                password + ',' +
+                location + ',' +
+                cardID + ',' +
+                telephoneNumber + ',' +
+                balance;
     }
 }

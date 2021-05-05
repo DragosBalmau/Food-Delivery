@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Restaurant {
+public class Restaurant implements WritableCSV{
 
     private String name;
     private String telephoneNumber;
@@ -12,6 +12,11 @@ public class Restaurant {
         this.name = name;
         this.telephoneNumber = telephoneNumber;
         this.location = location;
+    }
+
+    public Restaurant(String name, String telephoneNumber, String location) {
+        this.name = name;
+        this.telephoneNumber = telephoneNumber;
     }
 
     public String getName() {
@@ -59,4 +64,12 @@ public class Restaurant {
                 ", products=" + products +
                 '}';
     }
+
+    public String dataCSV() {
+        return
+                name + ',' +
+                telephoneNumber + ',' +
+                location;
+    }
+
 }

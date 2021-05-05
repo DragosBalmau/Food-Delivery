@@ -5,15 +5,23 @@ import java.util.stream.Collectors;
 public class Command {
 
     private String ID;
-    private Deliveryman deliveryman;
-    private User user;
+    private Deliveryman deliveryman = new Deliveryman();
+    private User user = new User();
 
     private List<Product> products = new ArrayList();
+
+    public Command() {}
 
     public Command(String ID, Deliveryman deliveryman, User user) {
         this.ID = ID;
         this.deliveryman = deliveryman;
         this.user = user;
+    }
+
+    public Command(String ID, String deliverymanID, String userID) {
+        this.ID = ID;
+        this.user.setID(userID);
+        this.deliveryman.setID(deliverymanID);
     }
 
     public void orderCommand() {
