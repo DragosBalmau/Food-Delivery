@@ -1,19 +1,23 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import Models.WritableCSV;
+
+import java.io.*;
 
 public class WriteCSV {
 
     private static WriteCSV single_instance = null;
 
     public <T extends WritableCSV> void write(T object, String path) {
-        try (PrintWriter writer = new PrintWriter(new File(path))) {
-
-            writer.write(object.dataCSV());
-
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
+        try {
+            FileWriter fw = new FileWriter(path, true);
+            BufferedWriter csv = new BufferedWriter(fw);
+            csv.write(object.dataCSV());
+            csv.close();
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+
     }
 
     public static WriteCSV getInstance()

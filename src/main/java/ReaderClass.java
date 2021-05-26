@@ -1,3 +1,8 @@
+import Models.Deliveryman;
+import Models.Location;
+import Models.Restaurant;
+import Models.User;
+
 import java.util.Scanner;
 
 public class ReaderClass {
@@ -36,11 +41,11 @@ public class ReaderClass {
 
     public Restaurant readCreateRestaurant() {
 
-        System.out.println("Name of the Restaurant: ");
+        System.out.println("Name of the Models.Restaurant: ");
         String name = this.input.nextLine();
         System.out.println("Telephone number: ");
         String telephoneNumber = this.input.nextLine();
-        System.out.println("Location: ");
+        System.out.println("Models.Location: ");
         String location = this.input.nextLine();
 
         return new Restaurant(name, telephoneNumber, readLocation());

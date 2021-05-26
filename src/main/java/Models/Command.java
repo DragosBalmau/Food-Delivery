@@ -1,3 +1,5 @@
+package Models;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,10 +9,12 @@ public class Command {
     private String ID;
     private Deliveryman deliveryman = new Deliveryman();
     private User user = new User();
+    private Restaurant restaurant = new Restaurant();
 
     private List<Product> products = new ArrayList();
+    private String productsList;
 
-    public Command() {}
+    public Command(String string, String resultSetString, String setString, String s) {}
 
     public Command(String ID, Deliveryman deliveryman, User user) {
         this.ID = ID;
@@ -22,6 +26,13 @@ public class Command {
         this.ID = ID;
         this.user.setID(userID);
         this.deliveryman.setID(deliverymanID);
+    }
+
+    public Command(String productsList, User user, Restaurant restaurant, Deliveryman deliveryman) {
+        this.deliveryman = deliveryman;
+        this.user = user;
+        this.restaurant = restaurant;
+        this.productsList = productsList;
     }
 
     public void orderCommand() {
@@ -66,7 +77,7 @@ public class Command {
 
     @Override
     public String toString() {
-        return "Command{" +
+        return "Models.Command{" +
                 "ID='" + ID + '\'' +
                 ", deliveryman=" + deliveryman +
                 ", user=" + user +

@@ -1,3 +1,6 @@
+import Models.*;
+import Repositories.*;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -9,9 +12,13 @@ public class Service {
     ReadCSV readCSV = ReadCSV.getInstance();
     WriteCSV writeCSV = WriteCSV.getInstance();
     LogWriter log = new LogWriter();
+    UserRepository userRepository = new UserRepository();
+    RestaurantRepository restaurantRepository = new RestaurantRepository();
+    DeliverymanRepository deliverymanRepository = new DeliverymanRepository();
+    CommandsRepository commandsRepository = new CommandsRepository();
 
     public void clearLogFile(){
-        log.clearLog();
+       log.clearLog();
     }
 
     public void createUser(){
@@ -115,6 +122,94 @@ public class Service {
         readCSV.read(Restaurant.class);
         readCSV.read(Command.class);
         log.writeLog("loadData");
+
+    }
+
+    /*------------------------------DATABASE FUNCTIONS------------------------------*/
+
+    public void insertUsersInDB(){
+
+        userRepository.insertUsers();
+        log.writeLog("insertUsers");
+
+    }
+
+    public void updateUserInDB(){
+
+        userRepository.updateUserFirstNameById("testname", 5);
+        log.writeLog("updateUser");
+
+    }
+
+    public void deleteUserInDB(){
+
+        userRepository.deleteUserById(3);
+        log.writeLog("deleteUser");
+
+    }
+
+
+    public void insertRestaurantsInDB(){
+
+        restaurantRepository.insertRestaurants();
+        log.writeLog("insertRestaurants");
+
+    }
+
+    public void updateRestaurantInDB(){
+
+        restaurantRepository.updateRestaurantTelephoneNumberById("0787878784", "Presto");
+        log.writeLog("updateRestaurant");
+
+    }
+
+    public void deleteRestaurantInDB(){
+
+        restaurantRepository.deleteRestaurantByName("KFC");
+        log.writeLog("deleteRestaurant");
+
+    }
+
+    public void insertDeliveymenInDB(){
+
+        deliverymanRepository.insertDeliverymen();
+        log.writeLog("insertDeliveymen");
+
+    }
+
+    public void updateDeliverymanInDB(){
+
+        deliverymanRepository.updateDeliverymanFirstNameById("testname", 4);
+        log.writeLog("updateDeliveryman");
+
+    }
+
+    public void deleteDeliverymanInDB(){
+
+        deliverymanRepository.deleteDeliverymanById(4);
+        log.writeLog("deleteDeliveryman");
+
+    }
+
+
+    public void insertCommandsInDB(){
+
+        commandsRepository.insertCommands();
+        log.writeLog("insertCommands");
+
+    }
+
+    public void updateCommandsInDB(){
+
+        commandsRepository.updateCommandsProdusctsById("bananne, mere", 4);
+        log.writeLog("updateCommands");
+
+    }
+
+    public void deleteCommandsInDB(){
+
+        commandsRepository.deleteCommandById(4);
+        log.writeLog("deleteCommands");
 
     }
 

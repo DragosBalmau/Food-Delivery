@@ -1,7 +1,9 @@
+package Models;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class User implements WritableCSV{
+public class User implements WritableCSV {
 
     protected String firstName;
     protected String lastName;
@@ -25,11 +27,20 @@ public class User implements WritableCSV{
         this.password = password;
     }
 
-    //TODO conversie String to Location
+    //TODO conversie String to Models.Location
     public User(String firstName, String lastName, String ID, String password, String location, String cardID, String telephoneNumber, double balance) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.ID = ID;
+        this.password = password;
+        this.cardID = cardID;
+        this.telephoneNumber = telephoneNumber;
+
+    }
+
+    public User(String firstName, String lastName, String password, String location, String cardID, String telephoneNumber, double balance) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.password = password;
         this.cardID = cardID;
         this.telephoneNumber = telephoneNumber;
@@ -122,7 +133,7 @@ public class User implements WritableCSV{
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Models.User{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", ID='" + ID + '\'' +
@@ -143,6 +154,6 @@ public class User implements WritableCSV{
                 location + ',' +
                 cardID + ',' +
                 telephoneNumber + ',' +
-                balance;
+                balance + '\n';
     }
 }

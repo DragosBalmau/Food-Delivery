@@ -1,7 +1,9 @@
+package Models;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Restaurant implements WritableCSV{
+public class Restaurant implements WritableCSV {
 
     private String name;
     private String telephoneNumber;
@@ -18,6 +20,8 @@ public class Restaurant implements WritableCSV{
         this.name = name;
         this.telephoneNumber = telephoneNumber;
     }
+
+    public Restaurant() { }
 
     public String getName() {
         return name;
@@ -57,7 +61,7 @@ public class Restaurant implements WritableCSV{
 
     @Override
     public String toString() {
-        return "Restaurant{" +
+        return "Models.Restaurant{" +
                 "name='" + name + '\'' +
                 ", telephoneNumber='" + telephoneNumber + '\'' +
                 ", location=" + location +

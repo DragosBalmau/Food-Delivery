@@ -1,1 +1,12 @@
-listUsers,2021.05.06.00.28.31
+insertUsers,2021.05.26.23.33.00
+updateUser,2021.05.26.23.33.00
+deleteUser,2021.05.26.23.33.00
+insertRestaurants,2021.05.26.23.33.00
+updateRestaurant,2021.05.26.23.33.00
+deleteRestaurant,2021.05.26.23.33.00
+insertDeliveymen,2021.05.26.23.33.00
+updateDeliveryman,2021.05.26.23.33.00
+deleteDeliveryman,2021.05.26.23.33.00
+insertCommands,2021.05.26.23.33.00
+updateCommands,2021.05.26.23.33.00
+deleteCommands,2021.05.26.23.33.00

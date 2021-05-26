@@ -1,3 +1,8 @@
+import Models.Command;
+import Models.Deliveryman;
+import Models.Restaurant;
+import Models.User;
+
 import java.io.*;
 
 public class ReadCSV {
@@ -23,7 +28,7 @@ public class ReadCSV {
             e.printStackTrace();
         }
         String row = csvReader.readLine();
-        while (csvReader.ready()) {
+        while (row != null) {
             String[] dataFromRow = row.split(",");
             if (User.class.equals(classType)) {
                 User user = new User(dataFromRow[0], dataFromRow[1], dataFromRow[2], dataFromRow[3], dataFromRow[4], dataFromRow[5], dataFromRow[6], Double.parseDouble(dataFromRow[7]));

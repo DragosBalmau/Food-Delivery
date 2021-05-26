@@ -1,3 +1,5 @@
+package Models;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,12 @@ public class Deliveryman extends User {
 
     public Deliveryman(String firstName, String lastName, String ID, String password, String location, String cardID, String telephoneNumber, double balance, String vehicleType, int rating) {
         super(firstName, lastName, ID, password, location, cardID, telephoneNumber, balance);
+        this.vehicleType = vehicleType;
+        this.rating = rating;
+    }
+
+    public Deliveryman(String firstName, String lastName, String password, String location, String cardID, String telephoneNumber, double balance, String vehicleType, int rating) {
+        super(firstName, lastName, password, location, cardID, telephoneNumber, balance);
         this.vehicleType = vehicleType;
         this.rating = rating;
     }
@@ -45,7 +53,7 @@ public class Deliveryman extends User {
 
     @Override
     public String toString() {
-        return "Deliveryman{" +
+        return "Models.Deliveryman{" +
                 "vehicleType='" + vehicleType + '\'' +
                 ", rating=" + rating +
                 ", firstName='" + firstName + '\'' +
